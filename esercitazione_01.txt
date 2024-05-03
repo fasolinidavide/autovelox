@@ -1,0 +1,19 @@
+.data 0x10002100			#segmento di dati
+CELLA: .word 0x800004d2			#cella CELLA inizializzata
+OUT_1: .byte 0x00			#all'inizio della simulazione le celle sono inizializzate a 0x00
+OUT_2: .byte 0x00
+
+.text					#segmento di istruzioni di default
+main:   #li $s0, 0x80			
+	#sll $s0, $s0, 24
+	lui $s0, 0x8000			#definisco una maschera pari a 0x80000000 (1000 0000 0000 0000 0000 0000 0000 0000)
+	add $s5, $zero, $zero		#somma (s5=0)
+	add $s6, $zero, $zero		#counter (s6=0)
+	
+check:	lw $s1, IN			#ciclo per controllare lo stato della linea 31 in IN
+	and $s3, $s1, $s0		#s1 AND s0 (IN AND 0x80000000)
+	beq $s3, $zero, check		#se il risultato dell'AND è ancora 0, riparte il ciclo (check), altrimenti continua sommando
+	jal sum
+	addi $sp, -4			#decremento il valore dell'indirizzo di 4
+	sw $s5, 0($sp)			#salvo il contenuto di s5 nella cella di memoria contenuta nello stack pointer con un offset di 0
+	jal compute
