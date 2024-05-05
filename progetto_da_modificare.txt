@@ -5,9 +5,9 @@
             IN_OUT:         .half 0x3000
             #################################################
 
-            CINQUANTA:        .word 0x3d0900    # (50km/h, 13.88m/s, 0.07s)      => 4000000.
-            CINQUANTACINQUE:  .word 0x39d2a1    # (55km/h, 15.27m/s, 0.065s) => 3789473.
-            SESSANTA:          .word 0x36ee80    # (60km/h, 16.66m/s, 0.06s)  => 3600000.
+            CINQUANTA:        .word 0x6ACFC0    # (50km/h, 13.88m/s, 0.07s)  => 7000000.
+            CINQUANTACINQUE:  .word 0x632EA0    # (55km/h, 15.27m/s, 0.065s) => 6500000.
+            SESSANTA:         .word 0x5B8D80   # (60km/h, 16.66m/s, 0.06s)  => 6000000.
 
             MEZZOSEC:       .word 0x2faf080   # 50M
             CENTOMS:        .word 0x989680    # 10M
