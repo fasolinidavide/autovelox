@@ -1,0 +1,8 @@
+	.data	
+I_O	.half 0 		#imposto i bit di I_O a 0
+
+	.text
+
+	li $s0, xxxxxxx		#(50km/h, 13.88m/s, 0.07s)  => VAL=(t*fck)/=1750000.
+  li $s1, xxxxxxx   #(55km/h, 15.27m/s, 0.065s) => VAL=(t*fck)/=1625000.    
+	li $s2, xxxxxxx		#(60km/h, 16.66m/s, 0.06s)  => VAL=(t*fck)/=1500000.
