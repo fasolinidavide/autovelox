@@ -1,122 +1,73 @@
         .data
-            #################################################
-            # 0x3000 => entrambi i sensori sono accesi
-            # 0x0    => caso normale
-            IN_OUT:         .half 0x3000
-            #################################################
-
-            CINQUANTA:        .word 0x6ACFC0    # (50km/h, 13.88m/s, 0.07s)  => 7000000.
-            CINQUANTACINQUE:  .word 0x632EA0    # (55km/h, 15.27m/s, 0.065s) => 6500000.
-            SESSANTA:         .word 0x5B8D80   # (60km/h, 16.66m/s, 0.06s)  => 6000000.
-
-            MEZZOSEC:       .word 0x2faf080   # 50M
-            CENTOMS:        .word 0x989680    # 10M
-
-            MASK_S1:        .half 0x1000      # sensore 1 (bit 12)
-            MASK_S2:        .half 0x2000      # sensore 2 (bit 13)
-            ##################################################
-            # 0x4c4b40 => caso oo (v < 90)
-            # 0x3b6dd0 => caso oi (90 < v < 95)
-            # 0x386090 => caso io (95 < v < 100)
-            # 0x27ac40 => caso ii (v > 100)
-            DEBUG_VAL:      .word 0x4c4b40
-            ##################################################
+I_O     .half 0                                 # 16 bit volti a rappresentare input/output(impostati a 0)
 
         .text
+            li $s0, 7200000                     # 50 km/h valore da controllare
+            li $s1, 6500000                     # 55 km/h
+            li $s2, 6000000                     # 60 km/h
 
-# prima caricare in memoria tutti i valori che serviranno dopo.
-            addi $s1, $zero, 1                # $s1=1 (per il controllo dei sensori e della velocità).
-            lw   $s2, MEZZOSEC
-            lw   $s3, CENTOMS
-            lh   $s4, MASK_S1
-            lh   $s5, MASK_S2
+inizio:     add $s3 $zero $zero                 #setto la variabile che rappresenta il numero 
+            la $s6, IN_OUT                      #salvo l'indirizzo della cella IN_OUT nel registro s6
+            li $s5, 268505088                   #(268505088 = 0x10011000)inserisco nel registro $s5, il numero con il 12 bit a 1, la mia mask.
+                                                #cosi facendo settiamo i primi 12 bit a 1 e lasciamo i restanti 20 a 0
 
-main:
-            j    sensore1
 
-# $s0 IN_OUT
-# $t0 sensore 1
-# $t3 contatore
-sensore1:
-            lh   $s0, IN_OUT                  # carico IN_OUT per aggiornare i valori del sensore.
+passo1:     lh $s4, 0($s6)                      #controllo con il registro s4 il contenuto(valore) della cella in memoria puntata da t0, il mio IN_OUT
+                                                #settare il bit a 1 del sensore tramite il SetValue
+                                                #passaggio della macchina
+                                            
+                                                #saranno tutte e due a 0  e attivo quindi i primo sensore
+            and $t1, $s4, $s5       	        #controllo se la MASK e la cella hanno gli stessi bit corrispondenti, indicando il passaggio della macchina al primo sensore
+            bne $t1, $s5, passo1         
+	
+            li $s5, 268513280                    #(12288= 0x10013000) setto ad 1 il dodicesimo e il tredicesimo bit della Mask (i bit dei sensori)
 
-            and  $t0, $s0, $s4                # controllo bit primo sensore (bit 12).
-            bne  $t0, $s4, sensore1           # sensore non attivo => torna a controllare lo stato dello sensore.
+# di base faccio lo stesso del primo passo ma la macchina essendo non ancora passata ma in viaggio aggiungo un ciclo per simulare il movimento della macchina
+passo2:     lh $s4, 0($s6)                      #stesso controllo di prima anche sul secondo sensore
+                                                #settare adesso il bit a 1 del sensore (senza spegnere il bit del primo sensore!)
+                                                #immaginando che la macchina stia passando 
+            and $t1, $s4, $s5         	        #confronto Mask e cella verifico se la macchina è passata dal secondo sensore
 
-            addi $t3, $zero, 2                # aggiungere 2 al contatore, tenendo conto delle 3 istruz. finali di sensore1.
-            j    sensore2
+            # !!! CAMBIARE DA CICLI A ISTRUZIONI !!!
+            addi $s3, $s3, 1        	        #ciclo fino a quando il confronto non si verifica, ad ogni ciclo aumento il contatore di un unità (registro s3).
+            bne $t1, $s5, passo2 
 
-# $s0 IN_OUT
-# $t0 sensore 2
-# $t3 contatore
-# $t4, $t5, $t6 controllo velocita
-sensore2:
-            lh   $s0, IN_OUT
+            slt $t0, $s0, $s3                   #verifico che il numero di cicli (il tempo) sia sia minore o maggiore rispetto a quelli a 50km/h
+            bne $t0, $zero, reset  	            #se la velocità è minore, salto a reset, per poi controllare alre macchine al passaggio
 
-            and  $t0, $s0, $s5                # controllo bit secondo sensore (bit 13).
-            addi $t3, $t3, 4                  # aggiungere 4 al contatore, tenendo conto delle 4 istruz. iniziali di sensore2.
-            bne  $t0, $s5, sensore2           # sensore non attivo => torna a controllare lo stato dello sensore.
 
-            lw   $t0, NOVANTA                 # 90km/h, 25m/s, 0.04s, 4000000.
-            lw   $t1, NOVANTACINQUE           # 95km/h, 26.38m/s, 0.0378s, 3789473.
-            lw   $t2, CENTO                   # 100km/h, 27.7m/s, 0.036s, 3600000.
+            #li $t9, 125000000      	        #eseguo un ciclo per passare i 0.5secondi, per evitare di dover eseguire il seguente ciclo troppe volte, 
+loop:       addi $t9, $t9, -1		            #si consiglia di settare manualmente il registro t9.    val=(txfck)/2=125000000
+            bne $t9, $zero, loop 
+        
+            # !!! CAMBIARE DA CICLI A ISTRUZIONI !!!
+            slt $t0, $s1, $s3                   #se il tempo di passaggio della vettura è maggiore di 55 (velocità compresa tra 50 e 55)	
+            beq $t0, $zero, ricerca2    	
+            li $s5, 268513538                   #(268513538=0x10013102)in caso il tempo sia compreso tra 50 e 55, setto l'I_O attivando il bit in posizione 8, e attivamdo il bit in pos 1 della cella, 
+            sh $s5, 0($s6) 	                    #indicando lo scatto della fotocamera, salvandola prima in un registro s5 e poi copiando i bit con una sh.
+            j fine                              #salto a fine
 
-            ##################################################
-            lw   $t7, DEBUG_VAL
-            add  $t3, $zero, $t7
-            ##################################################
 
-            # calcolo della velocità
-            slt  $t4, $t3, $t2                # $t4=1 se velocita supera i 100km/h.
-            slt  $t5, $t3, $t1                # $t5=1 se velocita supera i 95km/h.
-            slt  $t6, $t3, $t0                # $t6=1 se velocita supera i 90km/h.
+ricerca2:   slt $t0, $s2, $s3           #verifico che sia compresa tra 55 e 60,
+            beq $t0, $zero, ricerca3    
+            li $s5, 268513794           #(268513794=0x10013202)in caso il tempo sia compreso tra 80 e 90, setto l'in_out accendendo il bit in posizione 9, e attivo il bit in pos 1 della cella, 
+            sh $s5, 0($s6)              #indicando lo scatto della fotocamera, salvandola prima in un registro s5 e poi copiando i bit con una sh.
+            j fine                      #jumpo a fine
 
-                                              # v = velocita
-            bne  $t4, $zero, ii               # v > 100         funziona!
-            bne  $t5, $zero, io               # 100 < v < 95    
-            bne  $t6, $zero, oi               # 95 < v < 90
-            j    oo                           # v < 90
+ricerca3:   li $s5, 268514050           #(268514050=0x10013302)i 2 casi precedenti non sono verificati, si entra in automatico nel caso della velocità maggiore di 90 
+            sh $s5, 0($s6)              
             
-oo:
-            j    reset                        # se la macchina non supera i 90 km, aspettare la prossima macchina che passa
-oi:
-            addi $s0, $s0, 0x200              # (bit 9, V2) = 1.
-            j    savespeed
-io:
-            addi $s0, $s0, 0x100              # (bit 8, V1) = 1.
-            j    savespeed
-ii:
-            addi $s0, $s0, 0x300              # (sia V1 che V2) = 1.
-            j    savespeed
-savespeed:
-            sh   $s0, IN_OUT
-            add  $t0, $zero, $s2              # numero di istruzioni in 0.5 secondi.
+fine:      li $t9, 25000000            #aspettiamo 0.1 secondi, tempo di scatto della fotocamera.     val=(txfck)/2= 25000000
 
-            j    apriotturatore
-
-# $t0 conto alla rovescia
-# $t7 se contatore è arrivato a 0
-# $s0 IN_OUT
-apriotturatore:
-            addi $t0, $t0, -3                 # sotraggo 3 tenendo conto delle prime tre istruz. di apriotturatore.
-            slt  $t7, $t0, $s1                # $t7=1 se il contatore è minore o uguale a 0.
-            bne  $t7, $s1, apriotturatore     # se il contatore non è minore o uguale di 1 => continua a fare il conto alla rovescia
-
-            lh   $s0, IN_OUT
-            addi $s0, $s0, 0x2                # in caso contrario, apri otturatore.
-            add  $t0, $zero, $s3              # numero di istruzioni in 0.1 secondo.
-            j    chiudiotturatore
-# $t0 conto alla rovescia
-# $t7 se contatore è arrivato a 0
-chiudiotturatore:
-            addi $t0, $t0, -3
-            slt  $t7, $t0, $s1
-            bne  $t7, $s1, chiudiotturatore
-
-            j    reset
-
-reset:
-            add  $s0, $zero, $zero
-            sh   $s0, IN_OUT
-
-            j    main                         # il programma è pronto a controllare la prossima auto.
+loop2:      addi $t9, $t9, -1
+            bne $t9, $zero, loop2
+            
+# resetto se viene superato qualche limite di velocità da una macchina per prepare il programma a un altro giro
+            li $s5, -16                 #(-16=0x11111100), preparo una maschera per rimettere il bit 1 della cella a 0
+            lh $s4, 0($s6)              #leggo e salvo in s4 i bit della cella IN_OUT
+            and $t1, $s5, $s4           #rimetto il primo  bit della cella a 0 facendo una "and" tra il valore della mask e quello appena letto e salvato in s4, 
+            sh $t1, 0($s6)              #così da indicare il completamento dello scatto. metto i nuovi bit (salvati a t1) nella cella IN_OUT tramite una sh
+            
+reset:      li $t1, 0                   #settare a 0 tutta la IN_OUT, così da poter tornare a inizio per poi leggere il tempo di una nuova vettura, 
+            sh $t1, 0($s6)              #salvando in t1 il valore a 0 e poi andandolo a mettere in IN_OUT
+            j inizio                    #salto a inizio, controllo la prossima vettura
