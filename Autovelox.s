@@ -2,9 +2,9 @@
 I_O     .half 0                                 # 16 bit volti a rappresentare input/output(impostati a 0)
 
         .text
-            li $s0, 7200000                     # 50 km/h valore da controllare (72 secondi )
-            li $s1, 6500000                     # 55 km/h
-            li $s2, 6000000                     # 60 km/h
+            li $s0, 7200000                     # 50 km/h -> 13,88 m/s -> (1 m / 13,88 m/s = 0,072 s) --> 0,072 * 100.000.000 = 7200000
+            li $s1, 6500000                     # 55 km/h -> 15,27 m/s -> (1 m / 15,27 m/s = 0,065 s) --> 0,065 * 100.000.000 = 6500000
+            li $s2, 6000000                     # 60 km/h -> 16,66 m/s -> (1 m / 16,66 m/s = 0,06 s) --> 0,06 * 100.000.000 = 6000000
 
 inizio:     add $s3 $zero $zero                 #setto la variabile che rappresenta il numero di istruzioni
             la $s6, I_O                         #salvo l'indirizzo della cella I_O nel registro s6
