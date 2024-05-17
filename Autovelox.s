@@ -7,7 +7,7 @@ I_O     .half 0                                 # 16 bit volti a rappresentare i
             li $s2, 6000000                     # 60 km/h
 
 inizio:     add $s3 $zero $zero                 #setto la variabile che rappresenta il numero di istruzioni
-            la $s6, IN_OUT                      #salvo l'indirizzo della cella IN_OUT nel registro s6
+            la $s6, I_O                         #salvo l'indirizzo della cella I_O nel registro s6
 	    
 	    
             li $s5, 32768                      #il numero con il 15esimo bit a 1, la mask che corrisponde al primo sensore attraversato
@@ -35,9 +35,14 @@ passo2: lh $s4, 0($s6)                          #per non sporcare il valore di s
 
 	#fine conteggio istruzioni
 
-        mul $s3, $s3, 4                    # moltiplico il valore di $s3 per 4, ora possiamo confrontare le istruzioni che sono state eseguite tra un sensore ed un altro
+        mul $s3, $s3, 4                    	# moltiplico il valore di $s3 per 4, ora possiamo confrontare le istruzioni che sono state eseguite tra un sensore ed un altro
 
-       
+	slt $t0, $s0, $s3			# controllo se il tempo che impiega la macchina a passare per il secondo sensore 
+ 		
+  	bne $t0, $zero reset			# con il controllo precedente sappiamo che il tempo percorso è minore di 50km/h(7200000) è minore del tempo impiegato dalla macchina
+
+
+	slt $t0, $s1, $s3			# controllo se il tempo impiegato dalla macchina è tra 
 
 
 
