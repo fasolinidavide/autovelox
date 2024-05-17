@@ -39,7 +39,7 @@ passaggio2: lh $s4, 0($s6)                      #per non sporcare il valore di s
  		
   	bne $t0, $zero reset			# con il controllo precedente sappiamo che il tempo percorso è minore di 50km/h(7200000) è minore del tempo impiegato dalla macchina (1100 0000 1000 0000)
 
-	li $t2, 25000000 			# aspetto un tempo di 0.5s che è il tempo che la macchina fotografica ci mette per fare il reset (VAL=(tck*fck)/2)
+	li $t2, 25000000 			# aspetto un tempo di 0.5s che è il tempo che la macchina fotografica ci mette per fare il reset (VAL=(tx*fck)/2)
  loop:  addi $t2, $t2, -1			
 	bne $t2, $zero, loop			# decremento il tempo di attesa finchè non è arrivato a 0, momento in cui la macchina è di nuovo pronta per fare la foto
 
@@ -63,6 +63,11 @@ controllo2: slt $t0, $s2, $s3			# verifico che sia compreso tra 55 e 60, come ho
 
 controllo3: li $s5, 131				# l'unica alternativa è che la velocità sia >60 km/h -> 0000 0000 1000 0011 (128+2+1 = 131)
 	    sh $s5, 0($s6)			# indico lo scatto della fotocamera salvandola in s5 e poi in memoria in s6
+
+fine:	    li $t2, 50000000			# aspettiamo 1s, tempo di scatto della fotocamera. VAL = (tx*fck)/2 = 50000000
+loop2:      addi $t2, $t2, -1
+	    bne $t2, $zero, loop2		# decremento il tempo di scatto fino ad arrivare a 0, momento in cui posso preparare la maschera all'arrivo della successiva macchina
+     	    # reset delle variabili
   
 reset:      
             sh $zero, 0($s6)              	#resetto il registro I_O
