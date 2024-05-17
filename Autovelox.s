@@ -68,6 +68,10 @@ fine:	    li $t2, 50000000			# aspettiamo 1s, tempo di scatto della fotocamera. 
 loop2:      addi $t2, $t2, -1
 	    bne $t2, $zero, loop2		# decremento il tempo di scatto fino ad arrivare a 0, momento in cui posso preparare la maschera all'arrivo della successiva macchina
      	    # reset delle variabili
+	    li $s5, -16 			# azzero i bit della maschera per prepararla all'arrivo della prossima macchina
+     	    lh $s4, 0($s6)			# salvo in s4 i bit presenti in s6 (I_O)
+	    and $t1, $s4, $s5			# imposto il primo bit della cella a 0 facendo un and tra il valore della maschera e il registro appena modificato
+     	    sh $t1, 0($s6) 			# salvo lo scatto della macchina. inserisco i bit di t1 in s6 (I_O)
   
 reset:      
             sh $zero, 0($s6)              	#resetto il registro I_O
