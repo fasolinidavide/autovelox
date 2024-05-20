@@ -40,7 +40,7 @@ passaggio2: lh $s4, 0($s6)                      #per non sporcare il valore di s
   	    bne $t0, $zero reset		# con il controllo precedente sappiamo che il tempo percorso è minore di 50km/h(7200000) è minore del tempo impiegato dalla macchina (1100 0000 1000 0000)
 
 	    li $t2, 25000000 			# aspetto un tempo di 0.5s che è il tempo che la macchina fotografica ci mette per fare il reset (VAL=(tx*fck)/2)
- loop:      addi $t2, $t2, -1			
+loop:       addi $t2, $t2, -1			
 	    bne $t2, $zero, loop		# decremento il tempo di attesa finchè non è arrivato a 0, momento in cui la macchina è di nuovo pronta per fare la foto
 
  	    slt $t0, $s1, $s3			# controllo se il tempo impiegato dalla macchina è maggiore di 50km/h quindi compresa tra 50km/h e 55km/h 
