@@ -1,5 +1,5 @@
         .data
-I_O     .half 0                                 # 16 bit volti a rappresentare input/output(impostati a 0)
+I_O:    .half 0                                 # 16 bit volti a rappresentare input/output(impostati a 0)
 
         .text
             li $s0, 7200000                     # 50 km/h -> 13,88 m/s -> (1 m / 13,88 m/s = 0,072 s) --> 0,072 * 100.000.000 = 7200000
