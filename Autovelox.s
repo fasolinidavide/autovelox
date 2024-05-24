@@ -1,5 +1,5 @@
         .data
-I_O:    .half 0                                 # 16 bit volti a rappresentare input/output(impostati a 0)
+I_O:     .half 0x0000                                 # 16 bit volti a rappresentare input/output(impostati a 0) 10010000
 
         .text
             li $s0, 7200000                     # 50 km/h -> 13,88 m/s -> (1 m / 13,88 m/s = 0,072 s) --> 0,072 * 100.000.000 = 7200000
@@ -10,11 +10,11 @@ inizio:     add $s3 $zero $zero                 #setto la variabile che rapprese
             la $s6, I_O                         #salvo l'indirizzo della cella I_O nel registro s6
 	    
 	    
-            li $s5, 32768                       #il numero con il 15esimo bit a 1, la mask che corrisponde al primo sensore attraversato
+            li $s5, 0x8000                       #il numero con il 15esimo bit a 1, la mask che corrisponde al primo sensore attraversato
 	
 		
 
-passaggio1: lh $s4, 0($s6) 			#per non sporcare il valore di s6 quando andremo ad inserire manualmente il passaggio della macchina, utilizziamo un registro terzo
+passaggio1: lhu $s4, 0($s6) 			#per non sporcare il valore di s6 quando andremo ad inserire manualmente il passaggio della macchina, utilizziamo un registro terzo
 
 						#ora settare il valore di $s4 simulando il passaggio della macchina dal primo sensore
 	   
@@ -22,10 +22,10 @@ passaggio1: lh $s4, 0($s6) 			#per non sporcare il valore di s6 quando andremo a
 
 	    bne $t1, $s5, passaggio1		#cicla fino a quando la macchina non è passata dal primo sensore
 
-	    li $s5, 49152			#settiamo la mask con il 14esimo e 15esimo bit a 1, per controllare il passaggio (setaccio)
+	    li $s5, 0xc000			#settiamo la mask con il 14esimo e 15esimo bit a 1, per controllare il passaggio (setaccio)
 
 
-passaggio2: lh $s4, 0($s6)                      #per non sporcare il valore di s6 quando andremo ad inserire manualmente il passaggio della macchina, utilizziamo un registro terzo
+passaggio2: lhu $s4, 0($s6)                      #per non sporcare il valore di s6 quando andremo ad inserire manualmente il passaggio della macchina, utilizziamo un registro terzo
 						#setta manualmente il bit relativo al secondo settore
 	    and $t1, $s4, $s5 			#confronto mask e valore dei sensori
       
