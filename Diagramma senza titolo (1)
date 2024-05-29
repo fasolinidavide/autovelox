@@ -1,0 +1,313 @@
+<mxfile host="app.diagrams.net" modified="2024-05-29T16:01:37.106Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="7MCinY3I6brtbMY7sUi7" version="24.4.8" type="google">
+  <diagram name="Pagina-1" id="l2JAIWmNN4s2ATynlX0M">
+    <mxGraphModel dx="2812" dy="1143" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-2" target="SiXi4Oo7dEhB9GR9Bg55-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-2" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Cella 16 bit I_O&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="110" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-3" value="START AUTOVELOX" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry y="40" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-5" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;Creo la cella di memoria e la salvo nel registro s6&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="15" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-6" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="SiXi4Oo7dEhB9GR9Bg55-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="75" y="140" as="sourcePoint" />
+            <mxPoint x="125" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-7" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-450" y="340" as="sourcePoint" />
+            <mxPoint x="450" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-8" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;LOOP&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="320" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-9" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Inizia il controllo delle vetture&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="350" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-12" target="SiXi4Oo7dEhB9GR9Bg55-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="361" y="510" />
+              <mxPoint x="361" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-12" value="Il veicolo è passato dal primo sensore?&lt;div&gt;15° bit a 1&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#FF3333;strokeWidth=2;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-27.5" y="440" width="205" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-13" value="&lt;b&gt;FALSO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="485" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-15" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;Secondo sensore&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="15" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-16" value="&lt;b&gt;VERO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="590" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-19" target="SiXi4Oo7dEhB9GR9Bg55-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="369.9999999999998" y="680" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="860" />
+              <mxPoint x="360" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-19" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Il veicolo è passato dal secondo sensore?&lt;/font&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;14° bit a 1&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#FF3333;strokeWidth=2;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-27.5" y="790" width="205" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-22" target="SiXi4Oo7dEhB9GR9Bg55-56">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-110" y="1110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-22" target="SiXi4Oo7dEhB9GR9Bg55-61">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="1310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-22" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;La velocità è maggiore di 50km/h?&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#FF3333;strokeWidth=2;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-27.5" y="1040" width="205" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-23" value="&lt;b&gt;VERO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1000" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-24" value="&lt;b&gt;FALSO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="840" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-25" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Calcolo della velocità&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="-250" y="760" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-26" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.647;exitY=1.085;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-25" target="SiXi4Oo7dEhB9GR9Bg55-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-160" y="800" as="sourcePoint" />
+            <mxPoint x="-110" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-27" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.62;entryY=-0.053;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-12" target="SiXi4Oo7dEhB9GR9Bg55-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-70" y="580" as="sourcePoint" />
+            <mxPoint x="-20" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-56">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="391" as="targetPoint" />
+            <mxPoint x="-330" y="1110" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-379" y="1110" />
+              <mxPoint x="-379" y="391" />
+              <mxPoint x="70" y="391" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-29" value="&lt;b&gt;FALSO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-100" y="1090" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-30" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-450" y="2550" as="sourcePoint" />
+            <mxPoint x="-450" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-31" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="2550" as="sourcePoint" />
+            <mxPoint x="450" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-32" value="&lt;b&gt;VERO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1189" width="60" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="1840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="1990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-35" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;La velocità è maggiore di 55km/h?&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#FF3333;strokeWidth=2;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-27.5" y="1770" width="205" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-36" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Accendo il bit in posizione 0 della cella, ponendolo a 1&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="1810" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-37" value="&lt;b&gt;FALSO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="1820" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.021;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-40" target="SiXi4Oo7dEhB9GR9Bg55-48">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="2059.9999999999995" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-40">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="2260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-40" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;La velocità è maggiore di 60km/h?&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#FF3333;strokeWidth=2;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-27.5" y="1990" width="205" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-41" value="&lt;b&gt;VERO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1935" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="SiXi4Oo7dEhB9GR9Bg55-54">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-270" y="2430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-270" y="2430" />
+            </Array>
+            <mxPoint x="-270" y="1980" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-43" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Setto il bit in posizione 7 della cella a 1, indicando lo scatto della fotocamera&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="-350" y="1920" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-44" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-120" y="1950" as="sourcePoint" />
+            <mxPoint x="-27.5" y="2060" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-120" y="2000" />
+              <mxPoint x="-120" y="2060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-45" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-35" target="SiXi4Oo7dEhB9GR9Bg55-43">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-100" y="1840" as="sourcePoint" />
+            <mxPoint x="-184.4000000000001" y="2009.6999999999998" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-120" y="1840" />
+              <mxPoint x="-120" y="1950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-46" value="&lt;b&gt;FALSO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="1820" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-47" value="&lt;b&gt;VERO/FALSO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="2040" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-48" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Accendo il bit in posizione 1 della cella, ponendolo a 1&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="2030" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-49" value="&lt;b&gt;FALSO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="2040" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="2400" as="targetPoint" />
+            <mxPoint x="75" y="2320" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-51" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Accendo il bit in posizione 0 e 1 della cella, ponendolo a 1&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="7.51" y="2260" width="135" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-52" value="&lt;b&gt;VERO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="2180" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.498;exitY=1.075;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-54">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="350" as="targetPoint" />
+            <mxPoint x="75" y="2480" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="75" y="2510" />
+              <mxPoint x="-420" y="2510" />
+              <mxPoint x="-420" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-54" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Aspetto lo scatto della fotocamera (0,1 s) e setto il bit 7 della cella a 0 ad indicare l&#39;avvenuto scatto&amp;nbsp;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="-33.120000000000005" y="2400" width="216.25" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-55" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-450" y="2550" as="sourcePoint" />
+            <mxPoint x="450" y="2550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-56" value="&lt;br&gt;&lt;span style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 13px;&quot;&gt;La vettura è nei limiti di velocità.&lt;/span&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 13px;&quot;&gt;Controllo il prossimo veicolo.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="-330" y="1079.5" width="220" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="1770" as="targetPoint" />
+            <mxPoint x="75" y="1680" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-58" value="Il registro t2 ha valore 0?" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#FF3333;strokeWidth=2;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-41.25000000000001" y="1550" width="232.5" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="SiXi4Oo7dEhB9GR9Bg55-58">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="75" y="1450" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-61" target="SiXi4Oo7dEhB9GR9Bg55-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-61" value="&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Salvo nel registro temporaneo t2 un tempo 0,05 s&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="1240" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-62" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SiXi4Oo7dEhB9GR9Bg55-58" target="SiXi4Oo7dEhB9GR9Bg55-66">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="75" y="1680" as="sourcePoint" />
+            <mxPoint x="80" y="1520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="280" y="1615" />
+              <mxPoint x="280" y="1520" />
+              <mxPoint x="280" y="1420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-63" value="&lt;b&gt;FALSO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1600" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-64" value="&lt;b&gt;VERO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1690" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-65" value="Continuano i controlli" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-44.99999999999999" y="1730" width="125" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SiXi4Oo7dEhB9GR9Bg55-66" value="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;Decremento t2 fino a 0 per aspettare il reset della macchina&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="1390" width="280" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
