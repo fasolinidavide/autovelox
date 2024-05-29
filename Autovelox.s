@@ -39,7 +39,7 @@ passaggio2: lhu $s4, 0($s6)                      #per non sporcare il valore di 
  		
   	    bne $t0, $zero reset		# con il controllo precedente sappiamo che il tempo percorso è minore di 50km/h(7200000) è minore del tempo impiegato dalla macchina (1100 0000 1000 0000)
 
-	    li $t2, 25000000 			# aspetto un tempo di 0.5s che è il tempo che la macchina fotografica ci mette per fare il reset (VAL=(tx*fck)/2)
+	    li $t2, 100000000 			# aspetto un tempo di 1s che è il tempo che la macchina fotografica ci mette per fare il reset (VAL=(tx*fck)/2)
 loop:       addi $t2, $t2, -1			
 	    bne $t2, $zero, loop		# decremento il tempo di attesa finchè non è arrivato a 0, momento in cui la macchina è di nuovo pronta per fare la foto
 
@@ -63,16 +63,16 @@ controllo2: slt $t0, $s2, $s3			# verifico che sia compreso tra 55 e 60, come ho
 controllo3: li $s5, 131				# l'unica alternativa è che la velocità sia >60 km/h -> 0000 0000 1000 0011 (128+2+1 = 131)
 	    sh $s5, 0($s6)			# indico lo scatto della fotocamera salvandola in s5 e poi in memoria in s6
 
-fine:	    li $t2, 50000000			# aspettiamo 1s, tempo di scatto della fotocamera. VAL = (tx*fck)/2 = 50000000
+fine:	    li $t2, 5000000			# aspettiamo 0.05s, tempo di scatto della fotocamera. VAL = (tx*fck)/2 = 5000000
 loop2:      addi $t2, $t2, -1
 	    bne $t2, $zero, loop2		# decremento il tempo di scatto fino ad arrivare a 0, momento in cui posso preparare la maschera all'arrivo della successiva macchina
-     	    # reset delle variabili
-	    li $s5, 0 			# azzero i bit della maschera per prepararla all'arrivo della prossima macchina
-     	    lh $s4, 0($s6)			# salvo in s4 i bit presenti in s6 (I_O)
-	    and $t1, $s4, $s5			# imposto il primo bit della cella a 0 facendo un and tra il valore della maschera e il registro appena modificato
-     	    sh $t1, 0($s6) 			# salvo lo scatto della macchina. inserisco i bit di t1 in s6 (I_O)
-  
+
+         
+ 	    
+	      
 reset:      
-            sh $zero, 0($s6)              	#resetto il registro I_O
+           add $s4, $zero, $zero
+	   add $s5, $zero, $zero
+           add $s6, $zero, $zero
             j inizio                    	#salto a inizio, controllo la prossima vettura
 
