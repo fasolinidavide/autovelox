@@ -43,7 +43,7 @@ passaggio2: lhu $s4, 0($s6)                      #per non sporcare il valore di 
 loop:       addi $t2, $t2, -1			
 	    bne $t2, $zero, loop		# decremento il tempo di attesa finchè non è arrivato a 0, momento in cui la macchina è di nuovo pronta per fare la foto
 
- 	    slt $t0, $s1, $s3			# controllo se il tempo impiegato dalla macchina è maggiore di 50km/h quindi compresa tra 50km/h e 55km/h 
+ 	    slt $t0, $s1, $s3			# controllo se il tempo impiegato dalla macchina è maggiore di 55km/h quindi compresa tra 50km/h e 55km/h 
  	    beq $t0, $zero, controllo2
 
   	    # la macchina ha superato i 50 ma non i 55
